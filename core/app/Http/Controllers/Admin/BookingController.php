@@ -16,9 +16,9 @@ class BookingController extends Controller {
             ->with([
                 'room:id,room_number,room_type_id',
                 'room.roomType:id,name',
-                'booking:id,user_id,booking_number',
+                'booking:id,user_id,booking_number,guest_details',
                 'booking.user:id,firstname,lastname',
-                'usedPremiumService.premiumService:id,name'
+                'usedPremiumService.premiumService:id,name',
             ])
             ->where('booked_for', now()->toDateString())
             ->get();
